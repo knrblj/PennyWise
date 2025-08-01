@@ -1,0 +1,26 @@
+workflows:
+  ios-release:
+    name: Build iOS .ipa with Apple ID (Free Account)
+    environment:
+      flutter: stable
+      xcode: latest
+      vars:
+        BUNDLE_ID: com.example.kbTrackExpense
+        APP_NAME: kbTrackExpense
+    scripts:
+      - name: Install dependencies
+        script: flutter pub get
+
+      - name: Build iOS (no codesign)
+        script: flutter build ios --release --no-codesign
+
+    signing:
+      ios:
+        distribution_type: development
+        bundle_identifier: $BUNDLE_ID
+        app_store_connect:
+          email: $APP_STORE_CONNECT_EMAIL
+          password: $APPLE_ID_PASSWORD
+
+    artifacts:
+      - build/ios/ipa/*.ipa
