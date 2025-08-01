@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=PennyWise
+Comment=Smart spending, smarter insights
+Exec=/home/balaji-13970/tools/kb_track_expense/build/linux/x64/debug/bundle/kb_track_expense
+Icon=/home/balaji-13970/tools/kb_track_expense/linux/app_icon_512.png
+Terminal=false
+Categories=Office;Finance;
+StartupWMClass=kb_track_expense
+Keywords=expense;finance;budget;money;analytics;
